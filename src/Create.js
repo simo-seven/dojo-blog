@@ -16,8 +16,8 @@ const Create = () => {
 
         setIsLoading(true);
 
-        //creating the post request to our endpoint (in this case https://thedojoblog.netlify.app/ ecc)
-        fetch('https://thedojoblog.netlify.app/:8000/blogs', {
+        //creating the post request to our endpoint (in this case http://localhost ecc)
+        fetch('http://localhost:8000/blogs', {
             method: 'POST',
             headers: { "Content-Type": "application/json" }, //telling the json server the type of content we're sending
             body: JSON.stringify(blog) //transforming the object into a json string
