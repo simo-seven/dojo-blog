@@ -4,11 +4,11 @@ import useFetch from './useFetch';
 const BlogDetails = () => {
     //this allow us to grab parameters from the route
     const { id } = useParams();
-    const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
+    const { data: blog, error, isPending } = useFetch('%PUBLIC_URL%:8000/blogs/' + id);
     const history = useHistory();
 
     const handleClick = () => {
-        fetch('http://localhost:8000/blogs/' + blog.id, {
+        fetch('%PUBLIC_URL%:8000/blogs/' + blog.id, {
             method: 'DELETE' //sending the delete request
         }).then(() => {
             history.push('/'); //redirecting the user to the homepage after the blog has been deleted
